@@ -6,10 +6,15 @@
  */
 
 import React from 'react';
-import Navigation from './src/navigation';
+import {NavigationContainer} from '@react-navigation/native';
+import MyDrawer from './src/navigation/drawer';
 
 function App(): React.JSX.Element {
-  return <Navigation />;
+  return (
+    <NavigationContainer>
+      <MyDrawer />
+    </NavigationContainer>
+  );
 }
 
 

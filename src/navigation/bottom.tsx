@@ -9,9 +9,9 @@ import HomeStack from './homeStack';
 
 const {width} = Dimensions.get('window');
 
-const Tab = createBottomTabNavigator();
+const Tabs = createBottomTabNavigator();
 
-const BottomTabs = () => {
+const MyTabs = () => {
   const progress = useDrawerProgress();
   const animatedStyle = useAnimatedStyle(() => ({
     transform: [
@@ -23,12 +23,12 @@ const BottomTabs = () => {
 
   return (
     <Animated.View style={[styles.container, animatedStyle]}>
-      <Tab.Navigator
+      <Tabs.Navigator
         screenOptions={{headerShown: false}}
         tabBar={props => <BottomBar {...props} />}>
-        <Tab.Screen name="Home" component={HomeStack} />
-        <Tab.Screen name="Contact" component={Contact} />
-      </Tab.Navigator>
+        <Tabs.Screen name="Home" component={HomeStack} />
+        <Tabs.Screen name="Contact" component={Contact} />
+      </Tabs.Navigator>
     </Animated.View>
   );
 };
@@ -41,6 +41,4 @@ const styles = StyleSheet.create({
   },
 });
 
-
-
-export default BottomTabs;
+export default MyTabs;
