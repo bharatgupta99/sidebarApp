@@ -20,7 +20,7 @@ const Contact = () => {
 const styles = StyleSheet.create({
   parentContianer: {
     flex: 1,
-    padding: 16,
+    paddingHorizontal: 16,
   },
   container: {
     flex: 1,
