@@ -50,7 +50,10 @@ const BottomBar = ({state, navigation}: BottomTabBarProps) => {
         };
         const icon = RouteIconMap[route.name];
         return (
-          <TouchableOpacity onPress={onPress} style={style.tabBarItem}>
+          <TouchableOpacity
+            key={route.key}
+            onPress={onPress}
+            style={style.tabBarItem}>
             {isFocused ? icon.active : icon.inactive}
           </TouchableOpacity>
         );
