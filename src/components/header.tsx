@@ -17,7 +17,7 @@ const Header = () => {
       <TouchableOpacity onPress={handleHamburgerPress}>
         <FontAwesome6 name="bars" iconStyle="solid" size={24} color={'grey'} />
       </TouchableOpacity>
-      <Text style={style.title}>Start</Text>
+      <Text style={style.title}>START</Text>
     </View>
   );
 };
@@ -31,6 +31,7 @@ const style = StyleSheet.create({
     fontSize: 24,
     marginLeft: 12,
     color: COLORS.grey,
+    letterSpacing: 4,
   },
 });
 
