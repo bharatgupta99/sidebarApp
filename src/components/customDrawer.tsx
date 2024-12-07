@@ -1,7 +1,11 @@
-import {DrawerContentComponentProps} from '@react-navigation/drawer';
+import {
+  DrawerContentComponentProps,
+  useDrawerProgress,
+} from '@react-navigation/drawer';
 import React, {memo} from 'react';
 import {StyleSheet, Text, TouchableOpacity, View} from 'react-native';
-import {SafeAreaView} from 'react-native-safe-area-context';
+import Animated, {interpolate, useAnimatedStyle} from 'react-native-reanimated';
+import {useSafeAreaInsets} from 'react-native-safe-area-context';
 
 const DATA = {
   title: 'Beka',
@@ -11,14 +15,19 @@ const DATA = {
 
 const CustomDrawer = ({navigation}: DrawerContentComponentProps) => {
   const {title, items, footer} = DATA;
+  const {top} = useSafeAreaInsets();
+
+  const progress = useDrawerProgress();
+  const animatedStyle = useAnimatedStyle(() => ({
+    transform: [{translateY: interpolate(progress.value, [0, 1], [0, top])}],
+  }));
 
   const {toggleDrawer} = navigation;
 
   return (
-    <SafeAreaView style={styles.container}>
+    <Animated.View style={[styles.container, animatedStyle]}>
       <View>
         <Text style={styles.title}>{title}</Text>
-
         {items.map(item => (
           <TouchableOpacity key={item} onPress={toggleDrawer}>
             <Text style={styles.item}>{item}</Text>
@@ -28,7 +37,7 @@ const CustomDrawer = ({navigation}: DrawerContentComponentProps) => {
           <Text style={styles.footer}>{footer}</Text>
         </TouchableOpacity>
       </View>
-    </SafeAreaView>
+    </Animated.View>
   );
 };
 
@@ -36,7 +45,9 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     alignItems: 'center',
-    marginTop: 136,
+    backgroundColor: '#192841',
+    paddingTop: 110,
+    borderTopLeftRadius: 32,
   },
   title: {
     fontSize: 28,

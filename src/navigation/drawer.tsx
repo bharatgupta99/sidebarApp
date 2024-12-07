@@ -13,18 +13,15 @@ function MyDrawer() {
     <Drawer.Navigator
       drawerContent={props => <CustomDrawer {...props} />}
       screenOptions={{
+        headerShown: false,
         overlayColor: 'transparent',
         drawerStyle: {
           width: (7 / 15) * width,
-          backgroundColor: '#192841',
-        },
-        drawerContentContainerStyle: {
-          backgroundColor: 'white',
+          overflow: 'hidden',
         },
         sceneStyle: {
-          backgroundColor: '#192841',
+          backgroundColor: 'white',
         },
-        headerShown: false,
         drawerType: 'front',
       }}>
       <Drawer.Screen name="BottomTabBar" component={MyTabs} />
