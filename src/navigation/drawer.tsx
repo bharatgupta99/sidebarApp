@@ -3,6 +3,7 @@ import {createDrawerNavigator} from '@react-navigation/drawer';
 import CustomDrawer from '../components/customDrawer';
 import {Dimensions} from 'react-native';
 import MyTabs from './bottom';
+import COLORS from '../constants/colors';
 
 const {width} = Dimensions.get('screen');
 
@@ -20,7 +21,7 @@ function MyDrawer() {
           overflow: 'hidden',
         },
         sceneStyle: {
-          backgroundColor: 'white',
+          backgroundColor: COLORS.white,
         },
         drawerType: 'front',
       }}>

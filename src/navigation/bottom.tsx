@@ -7,6 +7,7 @@ import {useDrawerProgress} from '@react-navigation/drawer';
 import {Dimensions, StyleSheet} from 'react-native';
 import HomeStack from './homeStack';
 import {useSafeAreaInsets} from 'react-native-safe-area-context';
+import COLORS from '../constants/colors';
 
 const {width} = Dimensions.get('window');
 
@@ -44,7 +45,7 @@ const MyTabs = () => {
 const styles = StyleSheet.create({
   parentContainer: {
     flex: 1,
-    backgroundColor: '#192841',
+    backgroundColor: COLORS.primary,
   },
   container: {
     flex: 1,

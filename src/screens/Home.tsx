@@ -5,6 +5,7 @@ import Animated from 'react-native-reanimated';
 import useDrawerScreenTopStyle from '../hooks/useDrawerScreenTopStyle';
 import {useNavigation} from '@react-navigation/native';
 import {SCREENS} from '../navigation/homeStack';
+import COLORS from '../constants/colors';
 
 const Home = () => {
   const topAnimatedStyle = useDrawerScreenTopStyle();
@@ -42,7 +43,7 @@ const styles = StyleSheet.create({
     marginBottom: 24,
   },
   content: {
-    color: 'blue',
+    color: COLORS.blue,
     fontSize: 12,
   },
 });

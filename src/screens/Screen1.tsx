@@ -3,6 +3,7 @@ import {StyleSheet, Text, TouchableOpacity, View} from 'react-native';
 import Header from '../components/header';
 import {SafeAreaView} from 'react-native-safe-area-context';
 import {useNavigation} from '@react-navigation/native';
+import COLORS from '../constants/colors';
 
 const Screen1 = () => {
   const {pop} = useNavigation();
@@ -37,7 +38,7 @@ const styles = StyleSheet.create({
     marginBottom: 24,
   },
   content: {
-    color: 'blue',
+    color: COLORS.blue,
     fontSize: 12,
   },
 });

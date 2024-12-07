@@ -6,6 +6,7 @@ import React, {memo} from 'react';
 import {StyleSheet, Text, TouchableOpacity, View} from 'react-native';
 import Animated, {interpolate, useAnimatedStyle} from 'react-native-reanimated';
 import {useSafeAreaInsets} from 'react-native-safe-area-context';
+import COLORS from '../constants/colors';
 
 const DATA = {
   title: 'Beka',
@@ -45,28 +46,28 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     alignItems: 'center',
-    backgroundColor: '#192841',
+    backgroundColor: COLORS.primary,
     paddingTop: 110,
     borderTopLeftRadius: 32,
   },
   title: {
     fontSize: 28,
-    color: 'white',
+    color: COLORS.white,
     fontWeight: '700',
     marginBottom: 36,
     textAlign: 'center',
   },
   item: {
     fontSize: 24,
-    color: 'white',
+    color: COLORS.white,
     marginBottom: 36,
   },
   footer: {
     fontSize: 24,
     paddingTop: 48,
-    color: 'white',
+    color: COLORS.white,
     borderTopWidth: StyleSheet.hairlineWidth,
-    borderColor: 'white',
+    borderColor: COLORS.white,
   },
 });
 

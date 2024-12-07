@@ -4,6 +4,7 @@ import {useSafeAreaInsets} from 'react-native-safe-area-context';
 import FontAwesome6 from '@react-native-vector-icons/fontawesome6';
 import {memo} from 'react';
 import {BottomTabBarProps} from '@react-navigation/bottom-tabs';
+import COLORS from '../constants/colors';
 
 type RouteIconMapType = {
   [key: string]: {
@@ -65,10 +66,8 @@ const BottomBar = ({state, navigation}: BottomTabBarProps) => {
 const style = StyleSheet.create({
   container: {
     flexDirection: 'row',
-    borderTopWidth: StyleSheet.hairlineWidth,
-    borderColor: 'gray',
     paddingTop: 32,
-    backgroundColor: 'white',
+    backgroundColor: COLORS.white,
   },
   tabBarItem: {
     flex: 1,

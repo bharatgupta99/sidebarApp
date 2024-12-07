@@ -2,6 +2,7 @@ import React from 'react';
 import {StyleSheet, Text, TouchableOpacity, View} from 'react-native';
 import FontAwesome6 from '@react-native-vector-icons/fontawesome6';
 import {useNavigation} from '@react-navigation/native';
+import COLORS from '../constants/colors';
 
 const Header = () => {
   const navigation = useNavigation();
@@ -29,7 +30,7 @@ const style = StyleSheet.create({
   title: {
     fontSize: 24,
     marginLeft: 12,
-    color: 'grey',
+    color: COLORS.grey,
   },
 });
 
