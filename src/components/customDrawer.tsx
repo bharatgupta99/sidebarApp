@@ -20,7 +20,7 @@ const CustomDrawer = ({navigation}: DrawerContentComponentProps) => {
         <Text style={styles.title}>{title}</Text>
 
         {items.map(item => (
-          <TouchableOpacity onPress={toggleDrawer}>
+          <TouchableOpacity key={item} onPress={toggleDrawer}>
             <Text style={styles.item}>{item}</Text>
           </TouchableOpacity>
         ))}

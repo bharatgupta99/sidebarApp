@@ -2,7 +2,7 @@ import React from 'react';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import Home from '../screens/Home';
 import Contact from '../screens/Contact';
-import BottomBar from './bottomBar';
+import BottomBar from '../components/bottomBar';
 import Animated, {interpolate, useAnimatedStyle} from 'react-native-reanimated';
 import {useDrawerProgress} from '@react-navigation/drawer';
 import {Dimensions, StyleSheet} from 'react-native';

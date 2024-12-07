@@ -1,7 +1,7 @@
 import React from 'react';
 import {createDrawerNavigator} from '@react-navigation/drawer';
 import BottomTabs from './bottom';
-import CustomDrawer from './customDrawer';
+import CustomDrawer from '../components/customDrawer';
 import {Dimensions} from 'react-native';
 
 const {width} = Dimensions.get('screen');
