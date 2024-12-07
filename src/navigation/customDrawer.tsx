@@ -1,5 +1,6 @@
+import {DrawerContentComponentProps} from '@react-navigation/drawer';
 import React, {memo} from 'react';
-import {StyleSheet, Text, View} from 'react-native';
+import {StyleSheet, Text, TouchableOpacity, View} from 'react-native';
 import {SafeAreaView} from 'react-native-safe-area-context';
 
 const DATA = {
@@ -8,16 +9,24 @@ const DATA = {
   footer: 'Sign out',
 };
 
-const CustomDrawer = () => {
+const CustomDrawer = ({navigation}: DrawerContentComponentProps) => {
   const {title, items, footer} = DATA;
+
+  const {toggleDrawer} = navigation;
+
   return (
     <SafeAreaView style={styles.container}>
       <View>
         <Text style={styles.title}>{title}</Text>
+
         {items.map(item => (
-          <Text style={styles.item}>{item}</Text>
+          <TouchableOpacity onPress={toggleDrawer}>
+            <Text style={styles.item}>{item}</Text>
+          </TouchableOpacity>
         ))}
-        <Text style={styles.footer}>{footer}</Text>
+        <TouchableOpacity onPress={toggleDrawer}>
+          <Text style={styles.footer}>{footer}</Text>
+        </TouchableOpacity>
       </View>
     </SafeAreaView>
   );

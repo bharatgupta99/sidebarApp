@@ -27,7 +27,7 @@ const Drawer = createDrawerNavigator({
     headerShown: false,
     drawerType: 'front',
   },
-  drawerContent: () => <CustomDrawer />,
+  drawerContent: props => <CustomDrawer {...props} />,
 });
 
 export default Drawer;
