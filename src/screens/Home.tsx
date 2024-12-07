@@ -4,13 +4,14 @@ import Header from '../components/header';
 import Animated from 'react-native-reanimated';
 import useDrawerScreenTopStyle from '../hooks/useDrawerScreenTopStyle';
 import {useNavigation} from '@react-navigation/native';
+import {SCREENS} from '../navigation/homeStack';
 
 const Home = () => {
   const topAnimatedStyle = useDrawerScreenTopStyle();
   const {navigate} = useNavigation();
 
   const handleOnScreen1 = () => {
-    navigate('Screen1');
+    navigate(SCREENS.Screen1);
   };
 
   return (
