@@ -1,79 +1,43 @@
-This is a new [**React Native**](https://reactnative.dev) project, bootstrapped using [`@react-native-community/cli`](https://github.com/react-native-community/cli).
 
-# Getting Started
+# Drawer and Bottom Tab Navigation Animation
 
->**Note**: Make sure you have completed the [React Native - Environment Setup](https://reactnative.dev/docs/environment-setup) instructions till "Creating a new application" step, before proceeding.
+This React Native application demonstrates an animated integration of a **Drawer Navigator** and a **Bottom Tab Navigator** using **React Navigation** and **React Native Reanimated**. The app allows the bottom tab navigator to animate in sync with the drawer's progress, creating a smooth and visually appealing transition.
 
-## Step 1: Start the Metro Server
+---
 
-First, you will need to start **Metro**, the JavaScript _bundler_ that ships _with_ React Native.
+## **Thought Process**
 
-To start Metro, run the following command from the _root_ of your React Native project:
+### 1. **Defining the Navigation Architecture**
+The app includes two primary navigators:
+- **Drawer Navigator**: Provides access to a side drawer for navigation.
+- **Bottom Tab Navigator**: Hosts two tabs for additional navigation inside the drawer.
 
-```bash
-# using npm
-npm start
+The Drawer Navigator wraps the Bottom Tab Navigator, ensuring that the drawer controls the animation of the entire bottom tab content.
 
-# OR using Yarn
-yarn start
-```
+### 2. **Using Reanimated for Smooth Animations**
+To synchronize the animations, the `useDrawerProgress` hook from React Navigation is utilized. This hook provides a progress value (ranging from `0` to `1`) representing the current state of the drawer (closed to fully open).
 
-## Step 2: Start your Application
+The progress value is then used with Reanimated's `useAnimatedStyle` and `interpolate` functions to:
+- Translate the Bottom Tab Navigator horizontally as the drawer opens.
+- Rotate the Bottom Tab Navigator slightly for a tilted effect.
+- Translate the Bottom Tab Navigator and Drawer horizontally downwards. Since the downward motion logic is supposed to be used in two components, it moved to a reusable hook.
 
-Let Metro Bundler run in its _own_ terminal. Open a _new_ terminal from the _root_ of your React Native project. Run the following command to start your _Android_ or _iOS_ app:
+### 3. **Wrapping the Bottom Tabs in an Animated View**
+The `BottomTabs` component is wrapped in an `Animated.View`, allowing the animated transformations (translation and scaling) to be applied dynamically based on the drawer's progress.
 
-### For Android
+### 4. **Customizing Animations**
+- **TranslateX**: Moves the entire bottom tab navigator to the right as the drawer opens.
+- **Rotate**: Slightly tilts the bottom tab navigator to enhance the drawer animation effect.
+- **TranslateY**: Move the drawer and the bottom tab navigator to the bottom 
 
-```bash
-# using npm
-npm run android
+### 5. **Final Implementation**
+Combining React Navigation's navigation setup with Reanimated's hooks ensures:
+- Clean and declarative animation logic.
+- Flexible customization of animation styles.
 
-# OR using Yarn
-yarn android
-```
+---
 
-### For iOS
+## **GIF Demonstration**
 
-```bash
-# using npm
-npm run ios
+![Drawer and Bottom Tab Animation](https://github.com/bharatgupta99/sidebarApp/blob/main/demo.gif)
 
-# OR using Yarn
-yarn ios
-```
-
-If everything is set up _correctly_, you should see your new app running in your _Android Emulator_ or _iOS Simulator_ shortly provided you have set up your emulator/simulator correctly.
-
-This is one way to run your app — you can also run it directly from within Android Studio and Xcode respectively.
-
-## Step 3: Modifying your App
-
-Now that you have successfully run the app, let's modify it.
-
-1. Open `App.tsx` in your text editor of choice and edit some lines.
-2. For **Android**: Press the <kbd>R</kbd> key twice or select **"Reload"** from the **Developer Menu** (<kbd>Ctrl</kbd> + <kbd>M</kbd> (on Window and Linux) or <kbd>Cmd ⌘</kbd> + <kbd>M</kbd> (on macOS)) to see your changes!
-
-   For **iOS**: Hit <kbd>Cmd ⌘</kbd> + <kbd>R</kbd> in your iOS Simulator to reload the app and see your changes!
-
-## Congratulations! :tada:
-
-You've successfully run and modified your React Native App. :partying_face:
-
-### Now what?
-
-- If you want to add this new React Native code to an existing application, check out the [Integration guide](https://reactnative.dev/docs/integration-with-existing-apps).
-- If you're curious to learn more about React Native, check out the [Introduction to React Native](https://reactnative.dev/docs/getting-started).
-
-# Troubleshooting
-
-If you can't get this to work, see the [Troubleshooting](https://reactnative.dev/docs/troubleshooting) page.
-
-# Learn More
-
-To learn more about React Native, take a look at the following resources:
-
-- [React Native Website](https://reactnative.dev) - learn more about React Native.
-- [Getting Started](https://reactnative.dev/docs/environment-setup) - an **overview** of React Native and how setup your environment.
-- [Learn the Basics](https://reactnative.dev/docs/getting-started) - a **guided tour** of the React Native **basics**.
-- [Blog](https://reactnative.dev/blog) - read the latest official React Native **Blog** posts.
-- [`@facebook/react-native`](https://github.com/facebook/react-native) - the Open Source; GitHub **repository** for React Native.
