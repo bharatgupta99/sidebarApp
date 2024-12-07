@@ -13,8 +13,8 @@ type RouteIconMapType = {
 };
 const RouteIconMap: RouteIconMapType = {
   Home: {
-    active: <FontAwesome6 size={24} name="house" iconStyle="solid" />,
-    inactive: <FontAwesome6 size={24} name="house" iconStyle="regular" />,
+    active: <FontAwesome6 size={24} name="map" iconStyle="solid" />,
+    inactive: <FontAwesome6 size={24} name="map" iconStyle="regular" />,
   },
   Contact: {
     active: <FontAwesome6 size={24} name="address-book" iconStyle="solid" />,

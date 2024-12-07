@@ -15,7 +15,7 @@ const BottomTabs = () => {
   const progress = useDrawerProgress();
   const animatedStyle = useAnimatedStyle(() => ({
     transform: [
-      {translateX: interpolate(progress.value, [0, 1], [0, width / 2])},
+      {translateX: interpolate(progress.value, [0, 1], [0, (2 * width) / 3])},
       {translateY: interpolate(progress.value, [0, 1], [0, 40])},
       {rotate: `${interpolate(progress.value, [0, 1], [0, -10])}deg`},
     ],

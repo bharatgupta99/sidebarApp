@@ -14,14 +14,20 @@ const Drawer = createDrawerNavigator({
   },
   screenOptions: {
     overlayColor: 'transparent',
-    drawerStyle: {width: width / 3, backgroundColor: '#242424'},
+    drawerStyle: {
+      width: (7 / 15) * width,
+      backgroundColor: '#192841',
+    },
+    drawerContentContainerStyle: {
+      backgroundColor: 'white',
+    },
     sceneStyle: {
-      backgroundColor: '#242424',
+      backgroundColor: '#192841',
     },
     headerShown: false,
     drawerType: 'front',
   },
-  drawerContent: props => <CustomDrawer {...props} />,
+  drawerContent: () => <CustomDrawer />,
 });
 
 export default Drawer;

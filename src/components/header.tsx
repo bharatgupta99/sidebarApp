@@ -25,7 +25,6 @@ const style = StyleSheet.create({
   container: {
     flexDirection: 'row',
     alignItems: 'center',
-    paddingTop: 4,
   },
   title: {
     fontSize: 24,
