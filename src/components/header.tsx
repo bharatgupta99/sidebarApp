@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {memo} from 'react';
 import {StyleSheet, Text, TouchableOpacity, View} from 'react-native';
 import FontAwesome6 from '@react-native-vector-icons/fontawesome6';
 import {useNavigation} from '@react-navigation/native';
@@ -36,4 +36,4 @@ const style = StyleSheet.create({
   },
 });
 
-export default Header;
+export default memo(Header);
