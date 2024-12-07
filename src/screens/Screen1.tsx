@@ -4,9 +4,10 @@ import Header from '../components/header';
 import {SafeAreaView} from 'react-native-safe-area-context';
 import {useNavigation} from '@react-navigation/native';
 import COLORS from '../constants/colors';
+import {NativeStackNavigationProp} from '@react-navigation/native-stack';
 
 const Screen1 = () => {
-  const {pop} = useNavigation();
+  const {pop} = useNavigation<NativeStackNavigationProp<any>>();
   const handleGoToHome = () => {
     pop();
   };

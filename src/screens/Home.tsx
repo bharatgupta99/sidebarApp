@@ -1,4 +1,4 @@
-import React, {useCallback} from 'react';
+import React from 'react';
 import {StyleSheet, Text, TouchableOpacity, View} from 'react-native';
 import Header from '../components/header';
 import Animated from 'react-native-reanimated';
@@ -6,10 +6,11 @@ import useDrawerScreenTopStyle from '../hooks/useDrawerScreenTopStyle';
 import {useNavigation} from '@react-navigation/native';
 import {SCREENS} from '../navigation/homeStack';
 import COLORS from '../constants/colors';
+import {NativeStackNavigationProp} from '@react-navigation/native-stack';
 
 const Home = () => {
   const topAnimatedStyle = useDrawerScreenTopStyle();
-  const {navigate} = useNavigation();
+  const {navigate} = useNavigation<NativeStackNavigationProp<any>>();
 
   const handleOnScreen1 = () => {
     navigate(SCREENS.Screen1);
